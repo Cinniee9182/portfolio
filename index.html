@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cinnie | SEO & Growth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--surface:#f1eee8;--ink:#1d2430;--mute:#5c6470;--line:#dcd8cf;--accent:#2c4a6b;--on-accent:#ffffff;
+--serif:"Fraunces",Georgia,serif;--sans:"Instrument Sans",system-ui,sans-serif;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161c;--surface:#1a2029;--ink:#ecebe6;--mute:#a3a9b3;--line:#2b333f;--accent:#9db7d5;--on-accent:#12161c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12161c;--surface:#1a2029;--ink:#ecebe6;--mute:#a3a9b3;--line:#2b333f;--accent:#9db7d5;--on-accent:#12161c;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--sans)}
+::selection{background:var(--accent);color:var(--on-accent)}
+a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:.22em;text-decoration-thickness:1px}
+a:hover{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;font-size:.95rem}
+header.top nav{display:flex;gap:1.5rem;flex-wrap:wrap}
+header.top a{text-decoration:none;color:var(--mute)}
+header.top a:hover{color:var(--accent)}
+.logo{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--ink)!important}
+.hero{display:grid;grid-template-columns:1.5fr 1fr;gap:3rem;align-items:end;padding:4.5rem 0 5rem}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,6.2vw,5rem);line-height:1.04;letter-spacing:-.02em;margin:0 0 1.5rem;text-wrap:balance}
+h1 em{font-style:italic;color:var(--accent)}
+.lede{max-width:34rem;color:var(--mute);font-size:1.15rem;margin:0 0 2rem}
+.cta{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.8rem 1.5rem;border-radius:2px;letter-spacing:.01em;background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:600;transition:transform .25s cubic-bezier(.16,1,.3,1)}
+.btn:hover{transform:translateY(-2px);color:var(--on-accent)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.btn.ghost:hover{color:var(--accent)}
+.slot{display:flex;align-items:center;justify-content:center;text-align:center;padding:1.5rem;border:1.5px dashed var(--line);border-radius:6px;background:var(--surface);color:var(--mute);font-size:.9rem}
+.portrait{aspect-ratio:4/5}
+.portrait-img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 0%;border-radius:6px;box-shadow:0 18px 40px -18px rgba(29,36,48,.4)}
+section{padding:4.5rem 0;border-top:1px solid var(--line)}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,3.6vw,2.75rem);line-height:1.1;letter-spacing:-.015em;margin:0 0 2.5rem;max-width:22ch;text-wrap:balance}
+.ledger{list-style:none;margin:0;padding:0}
+.ledger li{display:grid;grid-template-columns:minmax(9rem,14rem) 1fr;gap:2rem;align-items:baseline;padding:1.4rem 0;border-bottom:1px solid var(--line)}
+.ledger li:first-child{border-top:1px solid var(--line)}
+.fig{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
+.ledger b{font-weight:600}
+.ledger span.d{color:var(--mute)}
+.case{display:grid;grid-template-columns:1fr 1fr;gap:3rem;padding:2.5rem 0;border-bottom:1px solid var(--line)}
+.case:last-of-type{border-bottom:0}
+.case h3{font-family:var(--serif);font-weight:600;font-size:1.6rem;line-height:1.2;margin:0 0 1rem}
+.case ul{margin:0;padding-left:1.1rem}
+.case li{margin-bottom:.7rem}
+.case li::marker{color:var(--accent)}
+.case .slot{min-height:15rem;align-self:start}
+.viz{align-self:start;padding:1.75rem;border-radius:6px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line)}
+.viz h4{margin:0 0 1.25rem;font-size:.95rem;font-weight:600;color:var(--mute)}
+.bar{margin-bottom:1.1rem}.bar:last-of-type{margin-bottom:0}
+.bar .lbl{display:flex;justify-content:space-between;font-size:.95rem;margin-bottom:.35rem;font-variant-numeric:tabular-nums}
+.bar .track{height:.75rem;border-radius:99px;background:var(--line);overflow:hidden}
+.bar .fill{height:100%;border-radius:99px;background:var(--mute)}
+.bar .fill.hi{background:var(--accent)}
+.viz .note{margin:1.25rem 0 0;font-size:.85rem;color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem}
+.chip{padding:.45rem .9rem;border-radius:2px;box-shadow:inset 0 0 0 1px var(--line);font-size:.95rem;background:var(--bg)}
+.chip.hi{background:var(--accent);color:var(--on-accent);box-shadow:none;font-weight:600}
+.flow{display:grid;gap:.6rem;justify-items:start}
+.flow .arrow{color:var(--accent);padding-left:1rem}
+.case.flip .slot,.case.flip .viz{order:-1}
+.jobs{display:grid;gap:0}
+.job{display:grid;grid-template-columns:minmax(9rem,14rem) 1fr;gap:2rem;padding:1.6rem 0;border-bottom:1px solid var(--line)}
+.job .when{color:var(--mute);font-size:.95rem;font-variant-numeric:tabular-nums}
+.job h3{margin:0 0 .35rem;font-size:1.1rem;font-weight:600}
+.job p{margin:0;color:var(--mute)}
+.tools{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem 3rem}
+.tools h3{margin:0 0 .5rem;font-family:var(--serif);font-size:1.25rem;font-weight:600}
+.tools p{margin:0;color:var(--mute)}
+.contact{font-family:var(--serif);font-size:clamp(1.6rem,3.4vw,2.4rem);line-height:1.3}
+.contact a{display:block;width:fit-content}
+footer{padding:2rem 0 3rem;color:var(--mute);font-size:.9rem}
+@media (max-width:800px){.hero,.case{grid-template-columns:1fr;gap:2rem}.case.flip .slot,.case.flip .viz{order:0}.portrait-img{max-width:20rem}
+.ledger li,.job{grid-template-columns:1fr;gap:.4rem}.tools{grid-template-columns:1fr}header.top nav{gap:1rem}}
+@media (prefers-reduced-motion:no-preference){.hero>*{animation:rise .9s cubic-bezier(.16,1,.3,1) both}.hero>*:nth-child(2){animation-delay:.12s}
+@keyframes rise{from{opacity:.001;transform:translateY(14px)}to{opacity:1;transform:none}}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<a class="logo" href="#top">Cinnie</a>
+<nav><a href="#results">Results</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
+</header>
+
+<main id="top">
+<div class="hero">
+<div>
+<h1>I grow organic traffic and turn it into <em>sign-ups</em>.</h1>
+<p class="lede">Growth manager with 3+ years in SEO, content and conversion. I run the audits, keep the content calendar, build the landing pages and report what worked. Based in Ho Chi Minh City.</p>
+<div class="cta"><a class="btn" href="mailto:thaott21022@gmail.com">Email me</a><a class="btn ghost" href="#results">See the results</a></div>
+</div>
+<img class="portrait-img" src="assets/portrait.jpg" alt="Portrait of Cinnie" width="900" height="1349">
+</div>
+
+<section id="results">
+<h2>What the work produced</h2>
+<ul class="ledger">
+<li><span class="fig">+13%</span><span><b>Organic traffic</b> <span class="d">at Gate, from landing page builds, a market-event content cadence and keyword targeting across vertical-specific pages.</span></span></li>
+<li><span class="fig">+18.6%</span><span><b>App downloads</b> <span class="d">on iOS and Android, from paid UA, ASO and in-product campaign surfacing. App Store and Google Play keyword rankings improved too.</span></span></li>
+<li><span class="fig">2% → 7%</span><span><b>Average CTR</b> <span class="d">after running 12+ A/B tests per quarter on creative, copy and placement.</span></span></li>
+<li><span class="fig">+20–35%</span><span><b>CTR at ProBit Global</b> <span class="d">from rewriting campaign messaging and partner materials.</span></span></li>
+<li><span class="fig">10,000+</span><span><b>Participants</b> <span class="d">in the trading competitions and community campaigns I supported.</span></span></li>
+<li><span class="fig">4–6</span><span><b>Campaigns a month</b> <span class="d">shipped across six verticals.</span></span></li>
+</ul>
+</section>
+
+<section id="work">
+<h2>How I work</h2>
+
+<div class="case">
+<div>
+<h3>SEO and organic growth</h3>
+<ul>
+<li>Run SEO audits and keyword research in Ahrefs and Semrush, then track rankings, queries and traffic in Google Search Console and Google Analytics.</li>
+<li>Build landing pages around vertical-specific keywords and publish market-event content on a steady cadence.</li>
+<li>Use AI tools for keyword suggestions, on-page optimization and first drafts. I review and rework everything before it goes live.</li>
+<li>Track App Store and Google Play keyword rankings in Sensor Tower.</li>
+</ul>
+</div>
+<div class="viz" role="img" aria-label="Bar chart: organic traffic rose from 100 to 113, app downloads from 100 to 118.6"><h4>Growth at Gate, indexed to a start of 100</h4>
+<div class="bar"><div class="lbl"><span>Organic traffic</span><span>113</span></div><div class="track"><div class="fill hi" style="width:90.4%"></div></div></div>
+<div class="bar"><div class="lbl"><span>App downloads (iOS and Android)</span><span>118.6</span></div><div class="track"><div class="fill hi" style="width:94.9%"></div></div></div>
+<p class="note">Start = 100 on both bars (scale runs to 125). Increases: +13% and +18.6%.</p></div>
+</div>
+
+<div class="case flip">
+<div>
+<h3>Content direction and calendar</h3>
+<ul>
+<li>Set the direction for social channels and own the content calendar, tying each topic to a product, a campaign and the company’s positioning.</li>
+<li>Brief designers on posts and make social graphics and campaign assets in Canva.</li>
+<li>Manage always-on acquisition and content across Meta, X/Twitter, Telegram and affiliate and KOL channels.</li>
+</ul>
+</div>
+<div class="viz"><h4>Channels I run, always on</h4>
+<div class="chips"><span class="chip">Meta</span><span class="chip">X/Twitter</span><span class="chip">Telegram</span><span class="chip">Affiliate</span><span class="chip">KOL</span></div>
+<h4 style="margin-top:1.75rem">Output</h4>
+<div class="chips"><span class="chip hi">4–6 campaigns a month</span><span class="chip hi">6 verticals</span></div></div>
+</div>
+
+<div class="case">
+<div>
+<h3>Funnels, landing pages and testing</h3>
+<ul>
+<li>Built and rebuilt landing pages and signup flows, matching ad creative to what people see after the click. Registration-to-first-deposit conversion rose quarter on quarter.</li>
+<li>Deployed email campaigns with tracking and adjusted content and targeting from the results.</li>
+<li>Tested landing pages, signup flows and in-app surfacing end to end with Product, Tech and Design before launch, then reported bugs and verified the fixes.</li>
+</ul>
+</div>
+<div class="viz" role="img" aria-label="Bar chart: average CTR rose from 2% to 7% after A/B testing"><h4>Average CTR after 12+ A/B tests per quarter</h4>
+<div class="bar"><div class="lbl"><span>Before</span><span>2%</span></div><div class="track"><div class="fill" style="width:25%"></div></div></div>
+<div class="bar"><div class="lbl"><span>After</span><span>7%</span></div><div class="track"><div class="fill hi" style="width:87.5%"></div></div></div>
+<p class="note">Tests covered creative, copy and placement.</p></div>
+</div>
+
+<div class="case flip">
+<div>
+<h3>Analytics and reporting</h3>
+<ul>
+<li>Built a Looker Studio dashboard that pulls Google Analytics, Sensor Tower and HubSpot into one view. Reporting takes less time and stakeholders work from the same numbers.</li>
+<li>Report on traffic, conversion and campaign results, each with a recommended next step.</li>
+<li>At ProBit, produced weekly reports on CTR, conversion, acquisition cost and partner performance.</li>
+</ul>
+</div>
+<div class="viz"><h4>One dashboard, three sources</h4>
+<div class="flow"><div class="chips"><span class="chip">Google Analytics</span><span class="chip">Sensor Tower</span><span class="chip">HubSpot</span></div>
+<span class="arrow" aria-hidden="true">↓</span>
+<span class="chip hi">Looker Studio: one source of truth for stakeholders</span></div></div>
+</div>
+</section>
+
+<section id="experience">
+<h2>Experience</h2>
+<div class="jobs">
+<div class="job"><div class="when">Feb 2025 to now</div><div><h3>Growth Manager, Gate</h3><p>SEO, social content, conversion funnels and analytics across six verticals.</p></div></div>
+<div class="job"><div class="when">Mar 2024 to Jun 2025</div><div><h3>Growth Marketing Specialist, ProBit Global</h3><p>Affiliate and referral campaigns, partner relationships, weekly performance reporting, Telegram and community channels, listing and launch campaigns.</p></div></div>
+<div class="job"><div class="when">Apr 2023 to Mar 2024</div><div><h3>Head of SEA Region Assistant, Gate</h3><p>Ran the KOL marketing strategy and tracked results to improve ROI. Streamlined support workflows with automation tools to cut response times.</p></div></div>
+<div class="job"><div class="when">Jun 2022 to Feb 2025</div><div><h3>Marketing Performance Executive, Karate Kombat (Gate side project)</h3><p>Reported on SEO and ASO performance, ran social and search campaigns, kept the brand consistent with Product and Design.</p></div></div>
+<div class="job"><div class="when">May 2022 to May 2023</div><div><h3>Community Manager, TheCoindesk</h3><p>Coordinated content translation for key markets and maintained partner and media relationships, including media booking.</p></div></div>
+</div>
+</section>
+
+<section id="tools">
+<h2>Tools and skills</h2>
+<div class="tools">
+<div><h3>SEO and analytics</h3><p>Ahrefs, Semrush, Google Search Console, Google Analytics, Looker Studio, Sensor Tower. Keyword research, on-page and technical audits, content optimization for Google and AI search.</p></div>
+<div><h3>Content and social</h3><p>Canva, content calendar planning, Meta Ads, affiliate and KOL partnerships.</p></div>
+<div><h3>Automation and funnels</h3><p>HubSpot, email marketing and tracking, landing pages, A/B testing, Claude and ChatGPT for drafting, data cleaning and SEO support.</p></div>
+<div><h3>Languages and education</h3><p>English (IELTS 7.0), Vietnamese (native), Chinese (communication). BA in External International Relations, University of Economics and Law, 2020 to 2024.</p></div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Let’s talk</h2>
+<p class="contact"><a href="mailto:thaott21022@gmail.com">thaott21022@gmail.com</a><a href="tel:+84345942995">+84 345 942 995</a></p>
+</section>
+</main>
+<footer>Ho Chi Minh City, Vietnam</footer>
+</div>
+</body>
+</html>
